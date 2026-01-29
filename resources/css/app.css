@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 1s ease-out;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+    animation: marquee 22s linear infinite;
+    will-change: transform;
+    display: inline-flex;
+}
+
+.hero-card {
+    backdrop-filter: blur(24px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.72));
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 35px 80px rgba(0, 41, 122, 0.2);
+}
+
+.hero-marquee {
+    backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 12px 32px rgba(0, 41, 122, 0.12);
+}
+
+.hero-title {
+    font-family: "Fraunces", "Plus Jakarta Sans", serif;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle,
+.hero-kicker {
+    font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.hero-pattern {
+    background-image:
+        radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.45), transparent 40%),
+        radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.3), transparent 35%),
+        radial-gradient(circle at 50% 100%, rgba(37, 99, 235, 0.25), transparent 45%);
+}
+
+@keyframes float-soft {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(8px, -18px, 0); }
+}
+
+.hero-orb {
+    animation: float-soft 10s ease-in-out infinite;
+}
